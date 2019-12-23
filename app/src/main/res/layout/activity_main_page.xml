@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.MainPage">
+<LinearLayout
+            android:id="@+id/toolbar"
+            android:weightSum="1"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textAllCaps="false"
+                android:layout_margin="10dp"
+                android:padding="2dp"
+                android:id="@+id/toolbar_title"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                />
+                <Switch
+                    android:textColor="@color/white"
+                    android:layout_margin="10dp"
+                    android:id="@+id/single_or_real_time"
+                    android:padding="2dp"
+                    android:textOn="Real Time"
+                    android:textOff="Single update"
+                    android:layout_width="0dp"
+                    android:checked="true"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    />
+
+        </LinearLayout>
+
+
+
+    <com.victor.loading.rotate.RotateLoading
+        android:id="@+id/rotateloading"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:loading_width="5dp"
+        app:loading_color="@color/colorAccent"
+        android:layout_centerInParent="true"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/all_nearby_places"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_data_image"
+        android:layout_gravity="center"
+        android:src="@drawable/no_internet"
+        android:layout_centerInParent="true"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:visibility="gone"
+        android:layout_below="@+id/no_data_image"
+        android:id="@+id/no_data"
+        android:text="Something went wrong !!"
+        android:gravity="center"
+        android:textColor="@color/grey"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

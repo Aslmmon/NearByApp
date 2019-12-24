@@ -52,7 +52,7 @@ public class MainPage extends AppCompatActivity
     private  boolean haveData = false ;
     private AllNearByPlacesAdapter allNearByPlacesAdapter ;
     private RotateLoading rotateloading;
-    private boolean GPS_ENABLED = false ;
+    private static boolean GPS_ENABLED = false ;
     private boolean firsttime = true ;
     SharedPreferences sharedpreferences ;
 
@@ -253,8 +253,8 @@ public class MainPage extends AppCompatActivity
                         case GPS_EVENT_STOPPED:
                             GPS_ENABLED = false ;
                             Log.d("GPS_ENABLED", String.valueOf(GPS_ENABLED));
-                            Toast.makeText(MainPage.this,"Your GPS seems to be disabled",
-                                    Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(MainPage.this,"Your GPS seems to be disabled",
+//                                    Toast.LENGTH_SHORT).show();
                             break;
                     }
                 });
@@ -312,7 +312,7 @@ public class MainPage extends AppCompatActivity
             firsttime = false;
         } else {
             boolean test = manager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-            if (test ) {
+            if (test) {
                 getLocationPermission();
                 statusCheck();
             }

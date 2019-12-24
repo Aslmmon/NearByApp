@@ -37,7 +37,8 @@ import static android.location.GpsStatus.GPS_EVENT_STARTED;
 import static android.location.GpsStatus.GPS_EVENT_STOPPED;
 
 public class MainPage extends AppCompatActivity
-        implements CompoundButton.OnCheckedChangeListener , LocationListener {
+        implements
+        CompoundButton.OnCheckedChangeListener, LocationListener {
 
 
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
@@ -52,7 +53,7 @@ public class MainPage extends AppCompatActivity
     private  boolean haveData = false ;
     private AllNearByPlacesAdapter allNearByPlacesAdapter ;
     private RotateLoading rotateloading;
-    private static boolean GPS_ENABLED = false ;
+    private boolean GPS_ENABLED = false ;
     private boolean firsttime = true ;
     SharedPreferences sharedpreferences ;
 
